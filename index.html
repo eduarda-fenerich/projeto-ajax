@@ -1,58 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPA</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset='UTF-8'>
+    <title>Mini SPA</title>
+    <link rel='stylesheet' href='../css/estilo.css'>
     <style>
-        nav{
+        nav {
             font-size: 2em;
         }
 
+
         nav a {
             text-decoration: none;
-            color: aliceblue;
+            color: black;
             padding: 0 10px;
         }
     </style>
 </head>
-<body>
+
+
+<body class="conteudo">
     <nav>
-        <a href="">Séries</a>
-        <a href="">Linguagens</a>
-
-        <div class="pagina"></div>
+        <a href wm-link="series.html" wm-destino=".pagina">Séries</a> |
+        <a href wm-link="linguagens.html" wm-destino=".pagina">Linguagens</a>
     </nav>
-
+    <div class="pagina"></div>
     <script>
-        function navegarViaAjaxx(url, seletor, push = true){
-            if(!url || !select) return
+        function navegarViaAjax(url, seletor, push = true) {
+            if(!url || !seletor) return
             const elemento = document.querySelector(seletor)
             fetch(url)
-            .then(resp => rest.text())
-            .then(html => {
-                elemento.innetHTML = html
-                if(push){
-                history.pushState({ seletor }, "Página Ajax", url)
-                }
-            })
-         }
-        document.querySelectorAll('[wm-link]').forEach(link =>{
-            const url = link.attributes['wm-link'].values
-            const seletorDestino = link.attributes['wm-destino'].values
+                .then(resp => resp.text())
+                .then(html => {
+                    elemento.innerHTML = html
+                    if(push) {
+                        history.pushState({ seletor }, "Página Ajax", url)
+                    }
+                })
+        }
+
+
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value
+            const seletorDestino = link.attributes['wm-destino'].value
+
 
             link.onclick = e => {
                 e.preventDefault()
-                navegarViaAjaxx(url, seletorDestino)
-            }
-
-            window.onpopstate = e => {
-                if(e.state){
-                    navegarViaAjaxx(window.location.href, e.state.seletor, false)
-                }
+                navegarViaAjax(url, seletorDestino)
             }
         })
+
+
+        window.onpopstate = e => {
+            if(e.state) {
+                navegarViaAjax(window.location.href, e.state.seletor, false)
+            }
+        }
     </script>
 </body>
-</html>
