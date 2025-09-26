@@ -31,13 +31,13 @@
             const elemento = document.querySelector(seletor)
             fetch(url)
             .then(resp => rest.text())
-            .then(html => elemento.innetHTML = html)
-
-            if(push){
+            .then(html => {
+                elemento.innetHTML = html
+                if(push){
                 history.pushState({ seletor }, "Página Ajax", url)
-            }
-        }
-
+                }
+            })
+         }
         document.querySelectorAll('[wm-link]').forEach(link =>{
             const url = link.attributes['wm-link'].values
             const seletorDestino = link.attributes['wm-destino'].values
@@ -49,7 +49,7 @@
 
             window.onpopstate = e => {
                 if(e.state){
-                    navegarViaAjaxx(window.location.href), e.state.seletor, false
+                    navegarViaAjaxx(window.location.href, e.state.seletor, false)
                 }
             }
         })
