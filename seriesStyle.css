@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(89, 45, 129, 0.788);
+}
+
+img{
+    width: 300px;
+    height: auto;
+    margin: 50px;
+    margin-left: 20px;
+}
+
+ul{
+    font-size: 30px;
+    color: aliceblue;
+}
+
+h1{
+    color: aliceblue;
+    margin-left: 730px;
+    font-size: 50px;
+}
+
+.pret{
+    margin-left: 45px;
+}
+
+.bel{
+    margin-left: 450px;
+}
+
+.des{
+    margin-left: 780px;
+}
+
+.oq{
+    margin-left: 1090px;
+}
+
+.ama{
+    margin-left: 1640;
+}

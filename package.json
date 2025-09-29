@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VillaRaffs/projeto-ajax.git"
+    "url": "git+https://github.com/eduarda-fenerich/projeto-ajax.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/VillaRaffs/projeto-ajax/issues"
+    "url": "https://github.com/eduarda-fenerich/projeto-ajax/issues"
   },
-  "homepage": "https://github.com/VillaRaffs/projeto-ajax#readme",
+  "homepage": "https://github.com/eduarda-fenerich/projeto-ajax#readme",
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
