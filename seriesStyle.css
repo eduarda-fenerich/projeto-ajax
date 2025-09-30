@@ -4,44 +4,45 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: rgba(89, 45, 129, 0.788);
 }
 
-img{
-    width: 300px;
-    height: auto;
-    margin: 50px;
-    margin-left: 20px;
-}
-
-ul{
-    font-size: 30px;
+h1 {
     color: aliceblue;
-}
-
-h1{
-    color: aliceblue;
-    margin-left: 730px;
+    text-align: center;
     font-size: 50px;
+    margin-bottom: 20px;
 }
 
-.pret{
-    margin-left: 45px;
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* Garante que a rolagem horizontal não tenha quebras de linha */
+    overflow-x: auto; /* Permite a rolagem horizontal */
+    padding: 20px;
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: flex-start; /* Alinha todos os itens à esquerda */
 }
 
-.bel{
-    margin-left: 450px;
+.container div {
+    display: flex;
+    flex-direction: column; /* Organiza a imagem em cima e o título embaixo */
+    align-items: center; /* Centraliza a imagem e o título dentro de cada div */
+    width: 150px; /* Define uma largura fixa para cada item */
+    height: 250px; /* Define a altura para manter o alinhamento */
 }
 
-.des{
-    margin-left: 780px;
+img {
+    width: 100%; /* A imagem ocupa toda a largura do seu container */
+    height: 150px; /* Define um tamanho fixo para as imagens */
+    object-fit: cover; /* Garante que a imagem se ajuste dentro da área sem distorcer */
+    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
 }
 
-.oq{
-    margin-left: 1090px;
-}
-
-.ama{
-    margin-left: 1640;
+li {
+    font-size: 18px;
+    color: aliceblue;
+    list-style-type: none;
+    margin: 0;   /* Remove a margem padrão do <li> */
+    text-align: center;
 }
