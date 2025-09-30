@@ -6,6 +6,15 @@
 
 body {
     background-color: rgba(89, 45, 129, 0.788);
+    display: flex; /* Usamos flexbox diretamente no body */
+    flex-wrap: wrap; /* Permite que as imagens se ajustem para novas linhas conforme o espaço */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre as divs */
+    padding: 20px; /* Espaçamento externo para o body */
+    background-image: url(./imagens/imagem-fundo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 h1 {
@@ -13,36 +22,31 @@ h1 {
     text-align: center;
     font-size: 50px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
-.container {
-    display: flex;
-    flex-wrap: nowrap; /* Garante que a rolagem horizontal não tenha quebras de linha */
-    overflow-x: auto; /* Permite a rolagem horizontal */
-    padding: 20px;
-    gap: 20px; /* Espaçamento entre os itens */
-    justify-content: flex-start; /* Alinha todos os itens à esquerda */
-}
-
-.container div {
+div {
     display: flex;
     flex-direction: column; /* Organiza a imagem em cima e o título embaixo */
     align-items: center; /* Centraliza a imagem e o título dentro de cada div */
-    width: 150px; /* Define uma largura fixa para cada item */
-    height: 250px; /* Define a altura para manter o alinhamento */
+    justify-content: flex-start; /* Alinha a imagem no topo e o título embaixo */
+    width: 350px; /* Largura fixa das divs */
+    height: 500px; /* Altura fixa das divs */
+    margin-bottom: 20px; /* Espaçamento abaixo de cada div */
 }
 
 img {
-    width: 100%; /* A imagem ocupa toda a largura do seu container */
-    height: 150px; /* Define um tamanho fixo para as imagens */
-    object-fit: cover; /* Garante que a imagem se ajuste dentro da área sem distorcer */
-    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+    width: 100%;  /* A imagem vai ocupar toda a largura do container */
+    height: 80%; /* A imagem vai ocupar 80% da altura da div */
+    object-fit: contain; /* A imagem vai se ajustar dentro da div, sem cortar */
+    margin-bottom: 10px; /* Espaço entre a imagem e o título */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 8px; /* A sombra só vai afetar a imagem */
 }
 
 li {
-    font-size: 18px;
-    color: aliceblue;
+    font-size: 30px;
+    color: black;
     list-style-type: none;
-    margin: 0;   /* Remove a margem padrão do <li> */
+    margin: 0;
     text-align: center;
 }
